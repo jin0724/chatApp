@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Join
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="join-page">
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="ID" id="userid"></ion-input>
+    </ion-item>
+    <ion-item>
+
+      <button id="btn_idcheck" block="" color="primary" ion-button="" class="disable-hover button button-ios button-default button-default-ios button-block button-block-ios button-ios-primary" (click)="doCheckId()">
+        <span class="button-inner">중복확인</span>
+        <div class="button-effect"></div>
+      </button>
+
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="UserName" id="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Password" id="passwd1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Re Password" id="passwd2"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button block="" color="primary" ion-button="" class="disable-hover button button-ios button-default button-default-ios button-block button-block-ios button-ios-primary" (click)="doJoin()">
+    <span class="button-inner">가입</span>
+    <div class="button-effect"></div>
+  </button>
+
+</ion-content>

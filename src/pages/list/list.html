@@ -7,31 +7,16 @@
 </ion-header>
 
 <ion-content class="list-page">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let user of users" (click)="goChat(user)">
       <ion-avatar item-start>
         <ion-icon role="img" class="icon icon-ios ion-ios-contact" aria-label="contact"></ion-icon>
       </ion-avatar>
-      <h2>Cher</h2>
+      <h2>{{user}}</h2>
     </ion-item>
-    <ion-item (click)="goChat('test')">
-      <ion-avatar item-start>
-        <ion-icon role="img" class="icon icon-ios ion-ios-contact" aria-label="contact"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <ion-icon role="img" class="icon icon-ios ion-ios-contact" aria-label="contact"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <ion-icon role="img" class="icon icon-ios ion-ios-contact" aria-label="contact"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-    </ion-item>
+
+
     <ion-item>
       <ion-avatar item-start>
         <img src="img/avatar-cher.png">

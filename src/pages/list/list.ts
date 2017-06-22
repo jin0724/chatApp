@@ -4,17 +4,33 @@ import { ChatPage } from '../chat/chat'
 
 
 @Component({
-  selector: 'page-contact',
+  selector: 'page-list',
   templateUrl: 'list.html'
 })
 export class ListPage {
 
-  constructor(public navCtrl: NavController) {
+  users : string[];
 
+  initializeUser() {
+    this.users = [
+      'kim',
+      'lee',
+      'park',
+      'choi',
+      'moon',
+      'u'
+    ];
+  }
+
+  constructor(public navCtrl: NavController) {
+    this.initializeUser();
   }
 
   goChat(usrId: string){
-    alert(usrId);
-    this.navCtrl.push(ChatPage);
+    this.navCtrl.push(ChatPage,
+      {
+        usrId : usrId
+      });
   }
+
 }
