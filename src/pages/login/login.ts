@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TabsPage }  from '../tabs/tabs';
 import { JoinPage }  from './join/join';
+import { TestPage }  from './test/test';
 
 @Component({
   selector: 'page-login',
@@ -21,5 +22,9 @@ export class LoginPage {
   doJoin(){
     alert("회원가입");
     this.navCtrl.push(JoinPage);
+  }
+  doTest(){
+    alert("test화면");
+    this.navCtrl.push(TestPage);
   }
 }

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let message of chats">{{message}}</ion-item>
+    <ion-item>
+      <ion-label floating>Enter a Message</ion-label>
+      <ion-input type="text" [(ngModel)]="chatinp"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="light" (click)="send(chatinp)">Send</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

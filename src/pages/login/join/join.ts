@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage }  from '../login';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,8 +10,11 @@ import * as $ from 'jquery';
   templateUrl: 'join.html'
 })
 export class JoinPage {
+
   public buffer;
-  constructor(public navCtrl: NavController) {
+  posts: any;
+
+  constructor(public navCtrl: NavController, public http : Http) {
 
   }
 
@@ -17,6 +22,26 @@ export class JoinPage {
     /* 아이디 유효성 검사 필요 */
     var userid = $('#userid > input').val();
     /* 중복인지 아닌지 검사 필요 */
+
+    var link = '/server';
+
+    /*
+      this.http.get(link)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log('faild');
+      });
+*/
+
+    this.http.post(link+"/findId",{id:userid}).subscribe(
+      data => {
+        console.log(data);
+      },
+      err => {
+        console.log("Oops!");
+      });
+
     alert("와하");
 
 
@@ -50,10 +75,7 @@ export class JoinPage {
       alert("비밀번호가 동일하지 않습니다.")
       return false;
     }
-
-
-    // 마지막에 확인
-
+    return true;
   }
 
   doJoin(){

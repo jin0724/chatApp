@@ -1,16 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      이름이나 방 제목
+      {{user.title}}
     </ion-title>
-    <button type="button">추가</button>
+    <button >
+      추 가
+    </button>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-      {{ item }}
-    </button>
-  </ion-list>
+<ion-content padding>
+  <ion-icon [name]="'logo-' + user.icon" [ngStyle]="{'color': user.color}"></ion-icon>
+  {{ user.description }}
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
